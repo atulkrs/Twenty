@@ -1,8 +1,7 @@
 import { AppRouterProviders } from '@/app/components/AppRouterProviders';
 import { SettingsRoutes } from '@/app/components/SettingsRoutes';
-import { VerifyLoginTokenEffect } from '@/auth/components/VerifyLoginTokenEffect';
-
 import { VerifyEmailEffect } from '@/auth/components/VerifyEmailEffect';
+import { VerifyLoginTokenEffect } from '@/auth/components/VerifyLoginTokenEffect';
 import indexAppPath from '@/navigation/utils/indexAppPath';
 import { AppPath } from '@/types/AppPath';
 import { BlankLayout } from '@/ui/layout/page/components/BlankLayout';
@@ -28,6 +27,9 @@ import { InviteTeam } from '~/pages/onboarding/InviteTeam';
 import { PaymentSuccess } from '~/pages/onboarding/PaymentSuccess';
 import { SyncEmails } from '~/pages/onboarding/SyncEmails';
 
+// 👇 new import for InterviewPlan
+import InterviewPlan from '~/pages/onboarding/InterviewPlan';
+
 export const useCreateAppRouter = (
   isFunctionSettingsEnabled?: boolean,
   isAdminPageEnabled?: boolean,
@@ -37,8 +39,6 @@ export const useCreateAppRouter = (
     createRoutesFromElements(
       <Route
         element={<AppRouterProviders />}
-        // To switch state to `loading` temporarily to enable us
-        // to set scroll position before the page is rendered
         loader={async () => Promise.resolve(null)}
       >
         <Route element={<DefaultLayout />}>
@@ -64,6 +64,10 @@ export const useCreateAppRouter = (
           <Route path={indexAppPath.getIndexAppPath()} element={<></>} />
           <Route path={AppPath.RecordIndexPage} element={<RecordIndexPage />} />
           <Route path={AppPath.RecordShowPage} element={<RecordShowPage />} />
+
+          {/* ✅ New InterviewPlan Route */}
+          <Route path="/ats/interview-plan" element={<InterviewPlan />} />
+
           <Route
             path={AppPath.SettingsCatchAll}
             element={
@@ -76,6 +80,7 @@ export const useCreateAppRouter = (
           />
           <Route path={AppPath.NotFoundWildcard} element={<NotFound />} />
         </Route>
+
         <Route element={<BlankLayout />}>
           <Route path={AppPath.Authorize} element={<Authorize />} />
         </Route>

@@ -10,7 +10,7 @@ export const AppRouter = () => {
   const isFunctionSettingsEnabled = false;
 
   const currentUser = useRecoilValue(currentUserState);
-
+ 
   const isAdminPageEnabled =
     (currentUser?.canImpersonate || currentUser?.canAccessFullAdminPanel) ??
     false;

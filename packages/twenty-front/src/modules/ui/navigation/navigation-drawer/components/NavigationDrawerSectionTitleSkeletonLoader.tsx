@@ -18,7 +18,7 @@ export const NavigationDrawerSectionTitleSkeletonLoader = () => {
     >
       <StyledSkeletonTitle>
         <Skeleton
-          width={56}
+          width={100}
           height={SKELETON_LOADER_HEIGHT_SIZES.standard.xs}
         />
       </StyledSkeletonTitle>

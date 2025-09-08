@@ -157,7 +157,7 @@ export const NavigationDrawerSectionForObjectMetadataItems = ({
                         indentationLevel={2}
                         subItemState={getNavigationSubItemLeftAdornment({
                           index: 3,
-                          arrayLength: 6,
+                          arrayLength: 7,
                           selectedIndex: -1,
                         })}
                       />
