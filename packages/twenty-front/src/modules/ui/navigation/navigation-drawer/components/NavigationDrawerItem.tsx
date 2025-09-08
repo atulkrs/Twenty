@@ -29,7 +29,7 @@ import {
 
 const DEFAULT_INDENTATION_LEVEL = 1;
 
-export type NavigationDrawerItemIndentationLevel = 1 | 2;
+export type NavigationDrawerItemIndentationLevel = 1 | 2 |3;
 
 export type NavigationDrawerItemProps = {
   className?: string;
@@ -95,7 +95,8 @@ const StyledItem = styled('button', {
   padding-top: ${({ theme }) => theme.spacing(1)};
 
   margin-top: ${({ indentationLevel }) =>
-    indentationLevel === 2 ? '2px' : '0'};
+    indentationLevel === 2 ? '2px': indentationLevel === 3 ? '2px':'0'};
+  
 
   pointer-events: ${(props) => (props.soon ? 'none' : 'auto')};
 
@@ -276,7 +277,7 @@ export const NavigationDrawerItem = ({
 
   const { navigationItemId } = useNavigationDrawerTooltip(label, to);
 
-  const showBreadcrumb = indentationLevel === 2;
+  const showBreadcrumb = indentationLevel === 3;
   const showStyledSpacer = Boolean(
     soon || isNew || count || keyboard || rightOptions,
   );

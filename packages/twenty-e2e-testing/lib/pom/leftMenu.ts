@@ -1,4 +1,4 @@
-import { Locator, Page } from '@playwright/test';
+import { type Locator, type Page } from '@playwright/test';
 
 export class LeftMenu {
   private readonly workspaceDropdown: Locator;
@@ -16,6 +16,7 @@ export class LeftMenu {
   private readonly notesTab: Locator;
   private readonly rocketsTab: Locator;
   private readonly workflowsTab: Locator;
+  private readonly atsTab: Locator;
 
   constructor(public readonly page: Page) {
     this.page = page;
@@ -26,6 +27,7 @@ export class LeftMenu {
     this.peopleTab = page.getByRole('link', { name: 'People' });
     this.companiesTab = page.getByRole('link', { name: 'Companies' });
     this.opportunitiesTab = page.getByRole('link', { name: 'Opportunities' });
+    this.atsTab = page.getByRole('link', { name: 'ATS' });
     this.opportunitiesTabAll = page.getByRole('link', {
       name: 'All',
       exact: true,
@@ -69,6 +71,9 @@ export class LeftMenu {
 
   async goToOpportunitiesTab() {
     await this.opportunitiesTab.click();
+  }
+  async goToAtsTab(){
+    await this.atsTab.click();
   }
 
   async goToOpportunitiesTableView() {
