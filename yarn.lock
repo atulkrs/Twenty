@@ -20784,6 +20784,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/trusted-types@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@types/trusted-types@npm:1.0.6"
+  checksum: 10c0/4bc61ac65b8e42d17c77a23f29cdf94e498acd2e23f4c00cf15c8281de94263ac313d46cbcd7cd1d03c066d497f9396845e3210ff0074f5f90f212cb3e8aac28
+  languageName: node
+  linkType: hard
+
 "@types/unist@npm:*, @types/unist@npm:^3.0.0":
   version: 3.0.2
   resolution: "@types/unist@npm:3.0.2"
@@ -27583,6 +27590,15 @@ __metadata:
   dependencies:
     yup: "npm:0.32.9"
   checksum: 10c0/4c210bea21832269fd8e18e4c9e9d750b314da04bc475b8b58414a6421a4c86804a6f1a8b9eda6d357af4c43f627fa3ee372f6fbb99b849d2a9b2aef2917bddf
+  languageName: node
+  linkType: hard
+
+"cron-validate@npm:^1.5.2":
+  version: 1.5.2
+  resolution: "cron-validate@npm:1.5.2"
+  dependencies:
+    yup: "npm:1.6.1"
+  checksum: 10c0/a4ba257bc160dcf579248a20670bb321fb04ab4b01d88ab729b0a6f30830de6a18002046617a0f9630a6e81196259b128c01933f1377efd3d9d1f1b695ff4c54
   languageName: node
   linkType: hard
 
@@ -41450,10 +41466,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"monaco-editor-auto-typings@npm:^0.4.6":
+  version: 0.4.6
+  resolution: "monaco-editor-auto-typings@npm:0.4.6"
+  peerDependencies:
+    monaco-editor: "*"
+  checksum: 10c0/5ee2b6f2380fd984511309c5efca1d13ba2daf887b51a9632ee7b94643fca63ddda7c422e606bca2ae6ab90847293052d60f34da9194061e0910d6822787bb49
+  languageName: node
+  linkType: hard
+
 "monaco-editor@npm:^0.51.0":
   version: 0.51.0
   resolution: "monaco-editor@npm:0.51.0"
   checksum: 10c0/7fde310c747e46cd7293e1a0f5e1fa85c389df9a1f8db03b9ccd58fd45356ab021a591b46198d19345566ad54556158f6489e2da4ad428a7a6ca3ea7b504afcb
+  languageName: node
+  linkType: hard
+
+"monaco-editor@npm:^0.53.0":
+  version: 0.53.0
+  resolution: "monaco-editor@npm:0.53.0"
+  dependencies:
+    "@types/trusted-types": "npm:^1.0.6"
+  checksum: 10c0/016495f0b869ea3a4151b660e5b8653999e54da9834001b4e7e88edae5c749aee2f1b56020bfece51cd08fc8e7125cd9732f414e373aea554e2f2812ee8245f1
   languageName: node
   linkType: hard
 
@@ -44848,7 +44882,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"property-expr@npm:^2.0.4":
+"property-expr@npm:^2.0.4, property-expr@npm:^2.0.5":
   version: 2.0.6
   resolution: "property-expr@npm:2.0.6"
   checksum: 10c0/69b7da15038a1146d6447c69c445306f66a33c425271235bb20507f1846dbf9577a8f9dfafe8acbfcb66f924b270157f155248308f026a68758f35fc72265b3c
@@ -50158,6 +50192,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tiny-case@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "tiny-case@npm:1.0.3"
+  checksum: 10c0/c0cbed35884a322265e2cd61ff435168d1ea523f88bf3864ce14a238ae9169e732649776964283a66e4eb882e655992081d4daf8c865042e2233425866111b35
+  languageName: node
+  linkType: hard
+
 "tiny-inflate@npm:^1.0.0, tiny-inflate@npm:^1.0.3":
   version: 1.0.3
   resolution: "tiny-inflate@npm:1.0.3"
@@ -50988,6 +51029,7 @@ __metadata:
     apollo-link-rest: "npm:^0.9.0"
     apollo-upload-client: "npm:^17.0.0"
     buffer: "npm:^6.0.3"
+    cron-validate: "npm:^1.5.2"
     date-fns: "npm:^2.30.0"
     docx: "npm:^9.1.0"
     eslint: "npm:^9.32.0"
@@ -51012,6 +51054,8 @@ __metadata:
     input-otp: "npm:^1.4.2"
     js-cookie: "npm:^3.0.5"
     json-2-csv: "npm:^5.4.0"
+    monaco-editor: "npm:^0.53.0"
+    monaco-editor-auto-typings: "npm:^0.4.6"
     optionator: "npm:^0.9.1"
     qs: "npm:^6.11.2"
     react-data-grid: "npm:7.0.0-beta.13"
@@ -54618,6 +54662,18 @@ __metadata:
     property-expr: "npm:^2.0.4"
     toposort: "npm:^2.0.2"
   checksum: 10c0/b2adff31f4be85aaad338e6db12a26715b9e11270c587afe051d42c423f7f24de2d184f646047cb5c3b8c65163c37611f8309f2ef4eb6bb7a66688158a081d66
+  languageName: node
+  linkType: hard
+
+"yup@npm:1.6.1":
+  version: 1.6.1
+  resolution: "yup@npm:1.6.1"
+  dependencies:
+    property-expr: "npm:^2.0.5"
+    tiny-case: "npm:^1.0.3"
+    toposort: "npm:^2.0.2"
+    type-fest: "npm:^2.19.0"
+  checksum: 10c0/84c2b53996e8001041239cf2719851719f67063ec7cd843067df73562353216f5ad4f8a222319696882d5a6058e528fade1e463c59d70cbffb41b99cd0d7571b
   languageName: node
   linkType: hard
 

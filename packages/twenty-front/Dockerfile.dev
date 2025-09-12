@@ -1,0 +1,35 @@
+# -----------------------
+# Front-end Dockerfile.dev
+# -----------------------
+FROM node:24
+
+WORKDIR /app
+
+# Set max memory for Node processes to 8GB
+ENV NODE_OPTIONS="--max-old-space-size=8192"
+
+# Copy root config files
+COPY ../../package.json ../../yarn.lock* ./
+COPY ../../.yarn/releases ./ .yarn/releases
+COPY ../../.yarnrc.yml ./
+
+COPY ../../.yarn/patches ./ .yarn/patches
+
+
+# Copy only front-end workspace + shared deps
+COPY ../../packages/twenty-front ./packages/twenty-front
+COPY ../../packages/twenty-shared ./packages/twenty-shared
+COPY ../../packages/twenty-utils ./packages/twenty-utils
+COPY ../../packages/twenty-ui ./packages/twenty-ui
+
+# Set yarn version
+RUN corepack enable
+RUN corepack prepare yarn@4.9.4 --activate
+
+# Install only front-end workspace dependencies
+RUN yarn cache clean
+RUN yarn --cwd packages/twenty-front install
+
+EXPOSE 5173
+
+CMD ["yarn", "workspace", "twenty-front", "start:dev"]
